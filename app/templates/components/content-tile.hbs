@@ -1,7 +1,13 @@
 <li>
   <h2>{{content.title}}</h2>
-  <img src={{content.picture}} alt="">
+  {{#if isStoryShowing}}
+    <img src={{content.picture}} alt="" {{action 'storyHide'}}>
+  {{else}}
+    <img src={{content.picture}} alt="" {{action 'storyShow'}}>
+  {{/if}}
+
   <h3> Article By: {{content.author}} </h3>
-
-
+  {{#if isStoryShowing }}
+    <p>{{content.body}}</p>
+  {{/if}}
 </li>
