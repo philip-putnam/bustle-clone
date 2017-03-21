@@ -1,12 +1,11 @@
 {{!-- The following component displays Ember's default welcome message. --}}
 <div class="container">
   <div class="row">
-    <h2>Here be a nav bar</h2>
     <div class="col-md-4">
-      <h5>a link</h5>
+      {{#link-to 'editor'}}Edit{{/link-to}}
     </div>
     <div class="col-md-4">
-      <h5>another link</h5>
+      {{#link-to 'index'}}Home{{/link-to}}
     </div>
     <div class="col-md-4">
       <h5>yet another link</h5>

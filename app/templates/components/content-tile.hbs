@@ -1,8 +1,9 @@
 <li>
-  <h2>{{content.title}}</h2>
   {{#if isStoryShowing}}
+    <h2 {{action 'storyHide'}}>{{content.title}}</h2>
     <img src={{content.picture}} alt="" {{action 'storyHide'}}>
   {{else}}
+    <h2 {{action 'storyShow'}}>{{content.title}}</h2>
     <img src={{content.picture}} alt="" {{action 'storyShow'}}>
   {{/if}}
 
