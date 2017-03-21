@@ -13,6 +13,15 @@ export default Ember.Route.extend({
     deleteStory(content) {
       content.destroyRecord();
       this.transitionTo('editor');
+    },
+    updateStory(content, params) {
+      Object.keys(params).forEach(function(key){
+        if(params[key]!==undefined){
+          content.set(key,params[key]);
+        }
+      });
+      content.save();
+      this.transitionTo('editor');
     }
   }
 });

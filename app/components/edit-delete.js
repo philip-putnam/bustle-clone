@@ -14,6 +14,16 @@ export default Ember.Component.extend({
     },
     showEditor() {
       this.set('editStory', true);
+    },
+    updateStory(content) {
+      var params = {
+        author: this.get('author'),
+        body: this.get('body'),
+        date: this.get('date'),
+        picture: this.get('picture'),
+        title: this.get('title'),
+      };
+      this.sendAction('updateStory', content, params);
     }
   }
 });
