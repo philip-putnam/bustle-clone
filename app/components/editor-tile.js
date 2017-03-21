@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  addNewStory: false,
   actions: {
     saveStory() {
-      console.log(this.get('inside'));
       var params = {
         author: this.get('author'),
         body: this.get('body'),
@@ -12,6 +12,9 @@ export default Ember.Component.extend({
         title: this.get('title'),
       };
       this.sendAction('saveStory', params);
+    },
+    showNewStoryForm() {
+      this.set('addNewStory', true);
     }
   }
 });
