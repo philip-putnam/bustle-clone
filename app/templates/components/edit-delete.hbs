@@ -1,7 +1,7 @@
 <li>
   <div class="row">
     <div class="col-md-2">
-      <button {{action 'editStory'}}>Edit Story</button>
+      <button {{action 'showEditor'}}>Edit Story</button>
       <button {{action 'deleteStory' content}}>Delete Story</button>
     </div>
     <div class="col-md-10">
@@ -9,9 +9,42 @@
 
       <h3> Article By: {{content.author}} </h3>
       <h4> Publish Date: {{content.date}} </h4>
+
       {{#if isStoryShowing}}
       <p>{{content.body}}</p>
       {{/if}}
+
+      {{#if editStory}}
+      <form>
+        <div class="form-group">
+          <label for="title">Story Title</label>
+          {{input value=title id="title"}}
+        </div>
+
+        <div class="form-group">
+          <label for="author">Story Author</label>
+          {{input value=author id="author"}}
+        </div>
+
+        <div class="form-group">
+          <label for="body">Story</label>
+          {{textarea value=body rows="6" id="body"}}
+        </div>
+
+        <div class="form-group">
+          <label for="picture">Add a Picture</label>
+          {{input value=picture id="picture"}}
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date Published</label>
+          {{input value=date id="date"}}
+        </div>
+
+        <button {{action 'editStory' content}}>Save</button>
+      </form>
+      {{/if}}
+
     </div>
   </div>
 </li>

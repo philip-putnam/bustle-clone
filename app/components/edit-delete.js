@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isStoryShowing: false,
+  editStory: false,
   actions: {
     storyShow(){
       this.set('isStoryShowing', true);
@@ -10,6 +11,9 @@ export default Ember.Component.extend({
       if (confirm("For Sure?")){
         this.sendAction('deleteStory', content);
       }
+    },
+    showEditor() {
+      this.set('editStory', true);
     }
   }
 });
