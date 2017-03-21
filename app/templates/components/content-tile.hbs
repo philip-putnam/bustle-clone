@@ -1,14 +1,12 @@
-<li>
-  {{#if isStoryShowing}}
-    <h2 {{action 'storyHide'}}>{{content.title}}</h2>
+{{#if isStoryShowing}}
+  <div class='col-md-4'>
     <img src={{content.picture}} alt="" {{action 'storyHide'}}>
-  {{else}}
-    <h2 {{action 'storyShow'}}>{{content.title}}</h2>
+    <div class='title-well' {{action 'storyHide'}}>{{content.title}}<br>By: {{content.author}}</div>
+    <pre>{{content.body}}</pre>
+  </div>
+{{else}}
+  <div class='col-md-4'>
     <img src={{content.picture}} alt="" {{action 'storyShow'}}>
-  {{/if}}
-
-  <h3> Article By: {{content.author}} </h3>
-  {{#if isStoryShowing }}
-    <p>{{content.body}}</p>
-  {{/if}}
-</li>
+    <div class='title-well' {{action 'storyShow'}}>{{content.title}}<br>By: {{content.author}}</div>
+  </div>
+{{/if}}

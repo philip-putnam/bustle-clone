@@ -1,0 +1,16 @@
+img {
+  width: 281px;
+}
+
+.title-well {
+  background-color: white;
+  width: 70%;
+  padding: 3%;
+  position: relative;
+  top: -20px;
+  left: 5%;
+}
+
+pre {
+  white-space: pre-wrap; 
+}
