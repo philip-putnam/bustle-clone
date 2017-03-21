@@ -1,1 +1,4 @@
 {{editor-tile saveStory="saveStory"}}
+{{#each model as |content|}}
+  {{edit-delete content=content deleteStory="deleteStory"}}
+{{/each}}

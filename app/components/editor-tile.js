@@ -15,6 +15,9 @@ export default Ember.Component.extend({
     },
     showNewStoryForm() {
       this.set('addNewStory', true);
+    },
+    hideNewStoryForm() {
+      this.set('addNewStory', false);
     }
   }
 });

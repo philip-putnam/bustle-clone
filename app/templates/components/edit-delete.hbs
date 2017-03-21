@@ -1,0 +1,17 @@
+<li>
+  <div class="row">
+    <div class="col-md-2">
+      <button {{action 'editStory'}}>Edit Story</button>
+      <button {{action 'deleteStory' content}}>Delete Story</button>
+    </div>
+    <div class="col-md-10">
+      <h2 {{action 'storyShow'}}>{{content.title}}</h2>
+
+      <h3> Article By: {{content.author}} </h3>
+      <h4> Publish Date: {{content.date}} </h4>
+      {{#if isStoryShowing}}
+      <p>{{content.body}}</p>
+      {{/if}}
+    </div>
+  </div>
+</li>
